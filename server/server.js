@@ -57,6 +57,10 @@ app.delete('/api/todos/:id', (req, res) => {
   res.status(204).send()
 })
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`)
-})
+module.exports = app;
+
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+}
